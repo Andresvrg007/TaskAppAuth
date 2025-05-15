@@ -5,3 +5,7 @@
 
 # Ignorar variables de entorno
 .env
+
+# Ignorar package.json y lock en la raíz
+/package.json
+/package-lock.json
