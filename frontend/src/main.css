@@ -1,0 +1,47 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fuente base */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  /* Enlaces */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Botones */
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+  
+  /* Formularios */
+  input, button {
+    outline: none;
+    border: none;
+  }
+  
+  /* Imágenes */
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Contenedor principal (opcional si quieres usarlo en App.jsx) */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  

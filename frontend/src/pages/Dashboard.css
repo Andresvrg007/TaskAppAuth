@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    min-height: 100vh;
+  }
+  
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .dashboard-header span {
+    color: #4a90e2;
+  }
+  
+  .dashboard-header button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .dashboard-header button:hover {
+    background-color: #d9363e;
+  }
+  
+  .task-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .task-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .task-form button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .task-form button:hover {
+    background-color: #3b78c3;
+  }
+  
+  .dashboard-main {
+    padding: 0 1rem;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    min-width: 250px;
+    flex: 1;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .task-form {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  
+    .card-container {
+      flex-direction: column;
+    }
+  }
+
+  /* ... resto del CSS igual ... */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    background: transparent; /* antes: white */
+    box-shadow: none; /* antes: shadow */
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .dashboard-header span {
+    color: #4a90e2;
+    font-weight: bold;
+  }
+  
+  .dashboard-header button {
+    background-color: transparent;
+    color: #ff4d4f;
+    border: 2px solid #ff4d4f;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .dashboard-header button:hover {
+    background-color: #ff4d4f;
+    color: white;
+  }
+  
