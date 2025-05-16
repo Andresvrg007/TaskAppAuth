@@ -1,6 +1,7 @@
 import './Card.css'
 import { DeleteBnt } from './DeleteBtn'
 
+
 export const Card=({tareas,username, setTareas})=>{
     const onDelete=()=>{
         console.log('deleting')

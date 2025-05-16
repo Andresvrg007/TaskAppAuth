@@ -1,7 +1,7 @@
 import {Link,  useNavigate} from "react-router-dom"
 import { useState } from "react"
 import Swal from 'sweetalert2'
-
+const BACKEND_URL= import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 import "./Register.css"
 
 export const Register=()=>{
@@ -21,7 +21,7 @@ export const Register=()=>{
                 password // ← la contraseña no se convierte
             }
             
-            let register=await fetch("http://localhost:3000/register",{
+            let register=await fetch(`${BACKEND_URL}/register`,{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'

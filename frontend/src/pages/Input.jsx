@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Dashboard.css';
-
+const BACKEND_URL= import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
 export const Input=({username,tareas, setTareas})=>{
    const [inputValue, setInputValue] = useState('');
@@ -12,7 +12,7 @@ export const Input=({username,tareas, setTareas})=>{
         
         
         try {
-            let task=await fetch('http://localhost:3000/dashboard',{
+            let task=await fetch(`${BACKEND_URL}/dashboard`,{
                 method:"POST",
                 headers:{
     

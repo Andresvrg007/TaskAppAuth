@@ -3,26 +3,27 @@ import { useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { jwtDecode } from "jwt-decode";
 import "./Login.css";
+const BACKEND_URL= import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
-export const Login = () => {
+export const Login = ({setAuth}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     const token= localStorage.getItem('token');
-
+    
     if (token) {
         const { exp,username } = jwtDecode(token);
         const now = Date.now() / 1000;
       
         if (exp < now) {
           // Token expirado → eliminar y redirigir al login
-          localStorage.removeItem("token");
-          console.log(username)
+          setAuth(true)
+          navigate('/')
         } else {
           // Token válido → mantener sesión
-          console.log(username)
+          
           navigate('/dashboard')
         }
       }
@@ -33,7 +34,7 @@ export const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000", {
+      const res = await fetch(`${BACKEND_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -48,13 +49,14 @@ export const Login = () => {
       }
 
       localStorage.setItem("token", data.token);
-
+      setAuth(true);
+      navigate("/dashboard");
       Swal.fire({
         title: "Login Successful",
         icon: "success"
       });
 
-      navigate("/dashboard");
+      
 
     } catch (error) {
       Swal.fire({

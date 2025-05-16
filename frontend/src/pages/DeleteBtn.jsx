@@ -1,11 +1,11 @@
 import './Card.css'
-
+const BACKEND_URL= import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 export const DeleteBnt=({username, setTareas, tareas})=>{
     const onDelete= async (btn)=>{
         let text=btn.closest("div").querySelector("p").textContent;
          
         try {
-            let task=await fetch('http://localhost:3000/',{
+            let task=await fetch(`${BACKEND_URL}/`,{
                 method:"DELETE",
                 headers:{
     

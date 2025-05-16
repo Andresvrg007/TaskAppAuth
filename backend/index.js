@@ -4,6 +4,8 @@ import connectDB from "./db.js";
 import User from "./models/users.js"
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { PORT } from "./config.js"
+
 
 
 const app = express();
@@ -159,11 +161,12 @@ const startServer = async () => {
   try {
     await connectDB(); // Espera conexión a MongoDB
     
+    
 
-
-    app.listen(3000, () => {
-      console.log("🚀 Server running on http://localhost:3000");
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
     });
+    
   } catch (error) {
     console.error("❌ Failed to start server:", error);
   }
